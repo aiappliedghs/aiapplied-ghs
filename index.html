@@ -263,6 +263,45 @@
     }
     .pillar p { color: var(--dim); font-size: 14px; line-height: 1.7; }
 
+    /* ── BASICS ── */
+    #basics {
+      padding: 120px 60px;
+      background: linear-gradient(180deg, transparent, rgba(74,227,200,0.03), transparent);
+      border-top: 1px solid var(--border);
+    }
+    .basics-header { text-align: center; margin-bottom: 80px; }
+    .basics-header h2 { max-width: 700px; margin: 0 auto; }
+    .basics-header p { color: var(--dim); margin-top: 24px; font-size: 15px; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .basics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .basics-card {
+      background: var(--card); padding: 48px 36px;
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .basics-card:hover { border-color: rgba(74,227,200,0.25); transform: translateY(-4px); }
+    .basics-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--cyan);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .basics-card:hover::before { transform: scaleX(1); }
+    .basics-icon {
+      font-size: 22px; margin-bottom: 28px;
+      display: block; color: var(--cyan);
+      font-family: 'DM Mono', monospace; font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .basics-card h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 20px; margin-bottom: 14px;
+    }
+    .basics-card p { color: var(--dim); font-size: 14px; line-height: 1.7; }
+
     /* ── NOT YOUR CLUB ── */
     #difference {
       padding: 120px 60px;
@@ -359,7 +398,8 @@
       .hero-graphic { display: none; }
       #about { grid-template-columns: 1fr; padding: 80px 24px; }
       .pillars { grid-template-columns: 1fr; }
-      #what, #difference, #how, #apply { padding: 80px 24px; }
+      #what, #basics, #difference, #how, #apply { padding: 80px 24px; }
+      .basics-grid { grid-template-columns: 1fr; }
       .diff-grid { grid-template-columns: 1fr; }
       .step { grid-template-columns: 60px 1fr; }
       .step-tag { display: none; }
@@ -378,6 +418,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#what">What We Do</a></li>
+      <li><a href="#basics">Basics</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#apply">Apply</a></li>
     </ul>
@@ -514,6 +555,47 @@
         <div class="pillar-num">03 / 03</div>
         <h3>Integrate It</h3>
         <p>The goal isn't to be impressed by AI. It's to make it a natural part of how you work, study, create, and solve problems every single day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BASICS -->
+  <section id="basics">
+    <div class="basics-header reveal">
+      <div class="section-label" style="justify-content:center">Computer Basics</div>
+      <h2>Don't know much about computers? <em>Don't worry.</em></h2>
+      <p>You don't need any experience to join. Before we get into AI, we make sure everyone is comfortable with the tools. We start from zero, no judgment.</p>
+    </div>
+    <div class="basics-grid">
+      <div class="basics-card reveal">
+        <span class="basics-icon">&gt;_</span>
+        <h3>Terminal</h3>
+        <p>A text window that controls your whole computer. Sounds intimidating. It's not. You'll be running commands confidently within the first session.</p>
+      </div>
+      <div class="basics-card reveal">
+        <span class="basics-icon">⌂</span>
+        <h3>Finder and File Explorer</h3>
+        <p>Where your files actually live. We'll teach you how to organize your projects, stop losing things in Downloads, and navigate your computer like you own it.</p>
+      </div>
+      <div class="basics-card reveal">
+        <span class="basics-icon">/</span>
+        <h3>File Paths</h3>
+        <p>What does /Users/you/Documents actually mean? Once it clicks, you'll wonder how you ever got by without understanding it. Takes about five minutes.</p>
+      </div>
+      <div class="basics-card reveal">
+        <span class="basics-icon">⌘</span>
+        <h3>Keyboard Shortcuts</h3>
+        <p>The ones everyone knows, plus the ones that actually save time. Copy, paste, undo, switch apps, take screenshots. Small habits, big difference.</p>
+      </div>
+      <div class="basics-card reveal">
+        <span class="basics-icon">{ }</span>
+        <h3>Text Editors</h3>
+        <p>VS Code is where you write code. We'll get you set up, walk you through the layout, and make sure nothing about it feels foreign before we start building.</p>
+      </div>
+      <div class="basics-card reveal">
+        <span class="basics-icon">&lt; &gt;</span>
+        <h3>Browser DevTools</h3>
+        <p>Right-click any website and inspect it. You can see exactly how it's built. It's one of the most useful things you can learn, and most people have no idea it exists.</p>
       </div>
     </div>
   </section>
